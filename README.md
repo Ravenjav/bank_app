@@ -11,13 +11,13 @@
 Скачать готовый `bank-app.jar` из раздела [Releases](https://github.com/Ravenjav/bank_app/releases) и выполнить:
 
 ```bash
-  java -jar bank-app.jar
+java -jar bank-app.jar
 ```
 
 ## Сборка и запуск из исходного кода
 
 ```bash
-  ./gradlew clean build bootRun
+./gradlew clean build bootRun
 ```
 
 После запуска доступны:
