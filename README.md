@@ -14,18 +14,18 @@
   java -jar bank-app.jar
 ```
 
+## Сборка и запуск из исходного кода
+
+```bash
+  ./gradlew clean build bootRun
+```
+
 После запуска доступны:
 
 - **Веб-интерфейс:** http://localhost:8081/applications
 - **Swagger UI:** http://localhost:8081/swagger-ui/index.html
 
 База данных H2 встроена в приложение. Таблицы и тестовые данные создаются автоматически при запуске.
-
-## Сборка и запуск из исходного кода
-
-```bash
-  ./gradlew clean build bootRun
-```
 
 ## REST API
 
