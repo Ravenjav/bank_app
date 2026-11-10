@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #243247;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 50px auto;
+    padding: 0 24px;
+}
+
+.page-header,
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.page-header p {
+    color: #69778a;
+    margin-top: 0;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #e2e7ee;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.panel-header {
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e8ecf1;
+}
+
+th {
+    background: #f8fafc;
+    color: #65748b;
+    font-size: 13px;
+}
+
+tr:hover td {
+    background: #fafcff;
+}
+
+.btn {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #2459a6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #194782;
+}
+
+.btn-secondary {
+    background: #e9eef5;
+    color: #26384d;
+}
+
+.btn-small {
+    padding: 7px 12px;
+}
+
+dialog {
+    width: min(420px, 90vw);
+    border: none;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+    background: rgba(20, 30, 50, 0.5);
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+dialog input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    max-width: 380px;
+    padding: 16px 22px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.notification[hidden] {
+    display: none;
+}
+
+.notification.success {
+    background: #218358;
+}
+
+.notification.error {
+    background: #c03942;
+}
+
+@media (max-width: 650px) {
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .container {
+        margin-top: 24px;
+    }
+
+    .panel {
+        padding: 12px;
+    }
+}
+
+.form-error {
+    padding: 12px 14px;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 7px;
+    color: #be123c;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-error[hidden] {
+    display: none;
+}

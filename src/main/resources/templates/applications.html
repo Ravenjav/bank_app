@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title th:text="${'Учёт банковских заявок'}">
+        Учёт банковских заявок
+    </title>
+
+    <link rel="stylesheet" th:href="@{/css/applications.css}">
+    <script th:src="@{/js/applications.js}" defer></script>
+</head>
+<body>
+
+<main class="container">
+
+    <header class="page-header">
+        <div>
+            <h1>Банковские заявки</h1>
+            <p>Регистрация заявок и оценка кредитного риска</p>
+        </div>
+
+        <button id="createButton" class="btn btn-primary">
+            + Новая заявка
+        </button>
+    </header>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Список заявок</h2>
+            <button id="refreshButton" class="btn btn-secondary">
+                Обновить
+            </button>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Клиент</th>
+                    <th>Сумма</th>
+                    <th>Рейтинг</th>
+                    <th>Дата создания</th>
+                    <th>Действие</th>
+                </tr>
+                </thead>
+
+                <tbody id="applicationsTable">
+                <tr>
+                    <td colspan="6">Загрузка данных...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<!-- Создание заявки -->
+<dialog id="createDialog">
+    <form id="createForm">
+        <h2>Новая заявка</h2>
+
+        <label for="clientId">ID клиента</label>
+        <input id="clientId"
+               name="clientId"
+               type="number"
+               min="1"
+               step="1"
+               required>
+
+        <label for="amount">Сумма заявки</label>
+        <input id="amount"
+               name="amount"
+               type="number"
+               min="0.01"
+               step="0.01"
+               required>
+
+        <div id="createFormError"
+             class="form-error"
+             role="alert"
+             hidden>
+        </div>
+
+        <div class="modal-actions">
+            <button type="button"
+                    class="btn btn-secondary"
+                    id="cancelCreate">
+                Отмена
+            </button>
+
+            <button type="submit"
+                    class="btn btn-primary">
+                Создать
+            </button>
+        </div>
+    </form>
+</dialog>
+
+<!-- Подтверждение расчёта рейтинга -->
+<dialog id="calculateDialog">
+    <h2>Расчёт рейтинга</h2>
+
+    <p id="calculateMessage"></p>
+
+    <div class="modal-actions">
+        <button id="cancelCalculate"
+                class="btn btn-secondary">
+            Отмена
+        </button>
+
+        <button id="confirmCalculate"
+                class="btn btn-primary">
+            Рассчитать
+        </button>
+    </div>
+</dialog>
+
+<!-- Уведомления -->
+<div id="notification"
+     class="notification"
+     role="alert"
+     aria-live="assertive"
+     hidden>
+</div>
+
+</body>
+</html>
