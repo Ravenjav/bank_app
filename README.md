@@ -4,11 +4,11 @@
 
 **Технологии:** Java 21, Spring Boot 3.2.2, Spring Data JPA, JDBC, H2, Thymeleaf, JavaScript, Gradle.
 
-## Запуск
+## Запуск из jar
 
 Для запуска требуется Java 21.
 
-Скачать готовый `bank-app.jar` из раздела [Releases](../../releases/latest) и выполнить:
+Скачать готовый `bank-app.jar` из раздела [Releases](https://github.com/Ravenjav/bank_app/releases) и выполнить:
 
 ```bash
   java -jar bank-app.jar
@@ -21,6 +21,12 @@
 
 База данных H2 встроена в приложение. Таблицы и тестовые данные создаются автоматически при запуске.
 
+## Сборка и запуск из исходного кода
+
+```bash
+  ./gradlew clean build bootRun
+```
+
 ## REST API
 
 | Метод | Endpoint | Описание |
@@ -29,8 +35,3 @@
 | POST | `/api/applications` | Создание заявки |
 | POST | `/api/applications/{id}/calculate` | Расчёт рейтинга |
 
-## Сборка и запуск из исходного кода
-
-```bash
-  ./gradlew clean build bootRun
-```
